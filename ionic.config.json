@@ -1,0 +1,7 @@
+{
+  "name": "ch33f-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
