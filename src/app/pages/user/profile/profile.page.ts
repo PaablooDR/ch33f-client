@@ -7,13 +7,13 @@ import { addIcons } from 'ionicons';
 import { home, restaurant, people, person } from 'ionicons/icons'
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.page.html',
-  styleUrls: ['./users.page.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
   standalone: true,
   imports: [IonicModule, RouterLink],
 })
-export class UsersPage implements OnInit {
+export class ProfilePage implements OnInit {
 
   constructor() {
     addIcons({ home, restaurant, people, person })

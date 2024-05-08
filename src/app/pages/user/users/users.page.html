@@ -1,13 +1,31 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>users</ion-title>
+    <ion-title>People</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">users</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
+
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/recipes']">
+      <ion-icon name="restaurant"></ion-icon>
+      Recipes
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/people']">
+      <ion-icon name="people"></ion-icon>
+      People
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/profile']">
+      <ion-icon name="person"></ion-icon>
+      Profile
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

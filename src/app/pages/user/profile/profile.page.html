@@ -1,21 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Recipes</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
+  <ion-list>
+    <ion-item class="profile">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Huey</ion-label>
+    </ion-item>
+    <ion-item class="profile">
+      <ion-label>Here's a small text description for the profile. Nothing more, nothing less.</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button>Add recipe</ion-button>
 
   <ion-card>
     <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-title>Recipe</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
   </ion-card>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <ion-card-header>
+      <ion-card-title>Recipe</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
 </ion-content>
 
 <ion-tabs>

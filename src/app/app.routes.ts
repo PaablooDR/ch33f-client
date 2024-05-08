@@ -8,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./pages/user/home/home.page').then( m => m.HomePage)
+    loadComponent: () => import('./pages/recipe/home/home.page').then( m => m.HomePage)
   },
   {
     path: 'admin/home',
@@ -19,7 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/recipe/recipes/recipes.page').then( m => m.RecipesPage)
   },
   {
-    path: 'users',
+    path: 'people',
     loadComponent: () => import('./pages/user/users/users.page').then( m => m.UsersPage)
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./pages/user/profile/profile.page').then( m => m.ProfilePage)
   },
 ];
