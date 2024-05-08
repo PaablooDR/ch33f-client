@@ -4,36 +4,38 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card> 
+<ion-content [fullscreen]="false">
+  @for (recipe of recipes; track recipe._id) {
+    <ion-card>
+      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <ion-card-header>
+        <ion-card-title>{{recipe.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{recipe.description}}
+      </ion-card-content>
+    </ion-card> 
+  }
 </ion-content>
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-      Home
-    </ion-tab-button>
-    <ion-tab-button tab="restaurant">
-      <ion-icon name="restaurant"></ion-icon>
-      Recipes
-    </ion-tab-button>
-    <ion-tab-button tab="people">
-      <ion-icon name="people"></ion-icon>
-      People
-    </ion-tab-button>
-    <ion-tab-button tab="search">
-    <!-- <ion-tab-button tab="search" [routerLink="['/profile']"]> -->
-      <ion-icon name="person"></ion-icon>
-      Profile
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="restaurant">
+        <ion-icon name="restaurant"></ion-icon>
+        Recipes
+      </ion-tab-button>
+      <ion-tab-button tab="people">
+        <ion-icon name="people"></ion-icon>
+        People
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="person"></ion-icon>
+        Profile
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
