@@ -66,7 +66,6 @@ export class RegisterPage implements OnInit {
         }
       );
     }
-
   }
 
   checkError(control: string, error: string) {

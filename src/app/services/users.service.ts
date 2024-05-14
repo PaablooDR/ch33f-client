@@ -16,4 +16,8 @@ export class UsersService {
   createUser(userData: FormData): Observable<any> {
     return this.http.post<any>(this.baseUrl, userData);
   }
+
+  loginUser(userData: { email: string; password: string }): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/login`, userData);
+  }
 }
