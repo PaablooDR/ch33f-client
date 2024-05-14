@@ -31,7 +31,8 @@
       <ion-note slot="error">Password's field must be minimum length 5</ion-note>
     </ion-item>
     <ion-item>
-      <ion-input label="Photo" labelPlacement="floating" type="file" formControlName="photo"></ion-input>
+      <ion-input label="Photo" labelPlacement="floating" type="file" (change)="onFileSelected($event)"></ion-input>
+      <!-- <ion-input label="Photo" labelPlacement="floating" type="file" (change)="capturarFile($event)"></ion-input> -->
     </ion-item>
     <ion-button type="submit" [disabled]="!formRegister.valid">Accept</ion-button>
   </form>

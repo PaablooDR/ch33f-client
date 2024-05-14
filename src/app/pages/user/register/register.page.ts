@@ -54,10 +54,8 @@ export class RegisterPage implements OnInit {
       formData.append('description', this.formRegister.value.description);
       formData.append('password', this.formRegister.value.password);
       if (this.selectedFile) {
-        formData.append('photo', this.selectedFile, this.selectedFile.name);
+        formData.append('photo', this.selectedFile);
       }
-
-      console.log('Valores del formulario:', this.formRegister.value);
 
       this.userService.createUser(formData).subscribe(
         (response) => {
@@ -67,8 +65,6 @@ export class RegisterPage implements OnInit {
           console.error('Error al crear usuario:', error);
         }
       );
-
-      console.log('Formulario enviado:', formData);
     }
 
   }
@@ -80,6 +76,7 @@ export class RegisterPage implements OnInit {
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     this.selectedFile = file;
+    console.log(this.selectedFile);
   }
 
   ngOnInit() {
