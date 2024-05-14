@@ -7,7 +7,7 @@
 <ion-searchbar animated="true" placeholder="Search" id="searchRecipe" (ionInput)="onInput($event)"></ion-searchbar>
 <ion-content [fullscreen]="false">
   @for (recipe of recipes; track recipe._id) {
-    <ion-card>
+    <ion-card [routerLink]="['/recipe', recipe._id]">
       <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
       <ion-card-header>
         <ion-card-title>{{ recipe.title }}</ion-card-title>

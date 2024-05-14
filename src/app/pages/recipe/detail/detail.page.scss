@@ -1,0 +1,20 @@
+img {
+    display: block;
+    margin: 0 auto;
+}
+:not(ion-toolbar) > ion-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#recipeImg {
+    margin-bottom: 30px;
+}
+.stepImg {
+    margin-bottom: 10px;
+}
+.stepImg:last-child {
+    margin-bottom: 40px;
+}
+.stepText {
+    margin-left: 20px;
+}

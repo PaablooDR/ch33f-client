@@ -15,6 +15,9 @@ export class RecipeService {
   getSearchedRecipes(search: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/find/?search=${search}`);
   }
+  getRecipe(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/recipe/?id=${id}`);
+  }
   getTopRecipes(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/top5`);
   }

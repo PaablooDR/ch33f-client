@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recipe Inspection</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="false">
+  <ion-title>{{recipe.title}}</ion-title>
+  <img id="recipeImg" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Ingredients</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let ingredient of recipe.ingredients">
+      <ion-label>{{ ingredient }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-title>Steps</ion-title>
+  <div *ngFor="let step of recipe.instructions; let i = index">
+    <p class="stepText">Step {{i+1}}: {{step.title}}</p>
+    <img class="stepImg" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
+  </div>
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/recipes']">
+        <ion-icon name="restaurant"></ion-icon>
+        Recipes
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/people']">
+        <ion-icon name="people"></ion-icon>
+        People
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/profile']">
+        <ion-icon name="person"></ion-icon>
+        Profile
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
