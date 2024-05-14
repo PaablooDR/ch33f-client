@@ -10,6 +10,24 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getAllRecipes(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl);
+    return this.http.get<any[]>(`${this.baseUrl}`);
+  }
+  getSearchedRecipes(search: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/find/?search=${search}`);
+  }
+  getTopRecipes(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/top5`);
+  }
+  getFirstRecipes(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/first`);
+  }
+  getFirstSearchedRecipes(search: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/firstsearch/?search=${search}`);
+  }
+  getNextRecipes(skip: number = 0): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/nextRecipes/?skip=${skip}`);
+  }
+  getNextSearchedRecipes(search: string, skip: number = 0): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/nextRecipeSearch/?skip=${skip}&search=${search}`);
   }
 }

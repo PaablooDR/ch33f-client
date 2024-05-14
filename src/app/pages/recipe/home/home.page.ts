@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
@@ -13,20 +13,19 @@ import { home, restaurant, people, person } from 'ionicons/icons'
   imports: [IonicModule, RouterLink],
 })
 
-// export class HomePage implements OnInit {
-export class HomePage {
-  recipes: any[] = [];
+export class HomePage implements OnInit {
+   recipes: any[] = [];
 
   constructor(private recipeService: RecipeService) {
     addIcons({ home, restaurant, people, person })
   }
 
   ngOnInit(): void {
-    this.getAllRecipes();
+    this.getTopRecipes();
   }
 
-  getAllRecipes(): void {
-    this.recipeService.getAllRecipes()
+  getTopRecipes(): void {
+    this.recipeService.getTopRecipes()
       .subscribe(recipes => {
         this.recipes = recipes;
       });
