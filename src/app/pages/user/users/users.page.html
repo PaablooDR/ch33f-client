@@ -4,28 +4,40 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
-
+<ion-searchbar animated="true" placeholder="Search" (ionInput)="onInputUsers($event)"></ion-searchbar>
+<ion-content [fullscreen]="false">
+  @for (user of users; track user._id) {
+    <ion-item [routerLink]="['/profile', user._id]">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>{{user.name}}</ion-label>
+    </ion-item>
+  }
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button [routerLink]="['/home']">
-      <ion-icon name="home"></ion-icon>
-      Home
-    </ion-tab-button>
-    <ion-tab-button [routerLink]="['/recipes']">
-      <ion-icon name="restaurant"></ion-icon>
-      Recipes
-    </ion-tab-button>
-    <ion-tab-button [routerLink]="['/people']">
-      <ion-icon name="people"></ion-icon>
-      People
-    </ion-tab-button>
-    <ion-tab-button [routerLink]="['/profile']">
-      <ion-icon name="person"></ion-icon>
-      Profile
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/recipes']">
+        <ion-icon name="restaurant"></ion-icon>
+        Recipes
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/people']">
+        <ion-icon name="people"></ion-icon>
+        People
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/profile']">
+        <ion-icon name="person"></ion-icon>
+        Profile
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

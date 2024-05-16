@@ -23,6 +23,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/recipe/detail/detail.page').then(m => m.DetailPage)
   },
   {
+    path: 'profile/:user',
+    loadComponent: () => import('./pages/user/profile/profile.page').then(m => m.ProfilePage)
+  },
+  {
     path: 'people',
     loadComponent: () => import('./pages/user/users/users.page').then( m => m.UsersPage)
   },
@@ -33,7 +37,8 @@ export const routes: Routes = [
   {
     path: 'register',
     loadComponent: () => import('./pages/user/register/register.page').then( m => m.RegisterPage)
-  },  {
+  },
+  {
     path: 'login',
     loadComponent: () => import('./pages/user/login/login.page').then( m => m.LoginPage)
   },

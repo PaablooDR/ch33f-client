@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-searchbar animated="true" placeholder="Search" id="searchRecipe" (ionInput)="onInput($event)"></ion-searchbar>
+<ion-searchbar animated="true" placeholder="Search" (ionInput)="onInputRecipe($event)"></ion-searchbar>
 <ion-content [fullscreen]="false">
   @for (recipe of recipes; track recipe._id) {
     <ion-card [routerLink]="['/recipe', recipe._id]">

@@ -12,6 +12,9 @@ export class RecipeService {
   getAllRecipes(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }
+  getUserRecipes(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/user/?id=${id}`);
+  }
   getSearchedRecipes(search: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/find/?search=${search}`);
   }

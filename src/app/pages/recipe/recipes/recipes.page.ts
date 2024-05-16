@@ -27,7 +27,6 @@ export class RecipesPage implements OnInit {
   ngOnInit(): void {
     this.getFirstRecipes();
     this.getNumRecipes();
-    this.startPrintingEvery5Seconds();
   }
 
   startPrintingEvery5Seconds(): void {
@@ -39,7 +38,7 @@ export class RecipesPage implements OnInit {
   }
   
   
-  onInput(event: any) {
+  onInputRecipe(event: any) {
     this.search = event.target.value;
     if(this.search === "") {
       this.enableInfiniteScroll();
@@ -53,7 +52,7 @@ export class RecipesPage implements OnInit {
       this.getNumRecipes();
       this.getFirstSearchedRecipes();
     }
-    console.log('Se ha escrito en el ion-searchbar:', this.search);
+    // console.log('Se ha escrito en el ion-searchbar:', this.search);
   }
 
   getFirstRecipes(): void {
