@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -38,4 +38,20 @@ export class UsersService {
   loginUser(userData: { email: string; password: string }): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, userData);
   }
+
+  createHeaders() {
+    return {
+      headers: new HttpHeaders ({
+        'Authoritation': localStorage.getItem('token_ch33f')!
+      })
+    }
+  }
+
+  isLogged(): boolean {
+    return localStorage.getItem('token_ch33f') ? true : false;
+  }
+
+  // getAllUsers(): Observable<any[]> {
+  //   return this.http.get<any[]>(this.baseUrl, this.createHeaders());
+  // }
 }

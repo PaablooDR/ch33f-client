@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { loginGuard } from './guards/login.guard';
 
 export const routes: Routes = [
   {
@@ -32,7 +33,8 @@ export const routes: Routes = [
   },
   {
     path: 'profile',
-    loadComponent: () => import('./pages/user/profile/profile.page').then( m => m.ProfilePage)
+    loadComponent: () => import('./pages/user/profile/profile.page').then( m => m.ProfilePage),
+    canActivate: [loginGuard]
   },
   {
     path: 'register',
