@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { home, restaurant, people, person } from 'ionicons/icons'
@@ -17,7 +17,7 @@ import { home, restaurant, people, person } from 'ionicons/icons'
 export class LoginPage implements OnInit {
   formLogin: FormGroup;
 
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private router: Router) {
     addIcons({ home, restaurant, people, person });
 
     this.formLogin = new FormGroup({
@@ -38,6 +38,8 @@ export class LoginPage implements OnInit {
       this.userService.loginUser(loginData).subscribe(
         (response) => {
           console.log('Usuario logeado exitosamente:', response);
+          localStorage.setItem('token_ch33f', response.token);
+          this.router.navigate(['/home']);
         },
         (error) => {
           console.error('Error al logear usuario:', error);
