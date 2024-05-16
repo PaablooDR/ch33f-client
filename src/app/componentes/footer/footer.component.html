@@ -1,0 +1,26 @@
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/recipes']">
+        <ion-icon name="restaurant"></ion-icon>
+        Recipes
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/people']">
+        <ion-icon name="people"></ion-icon>
+        People
+      </ion-tab-button>
+      <ion-tab-button *ngIf="userService.isLogged()" [routerLink]="['/profile']">
+        <ion-icon name="person"></ion-icon>
+        Profile
+      </ion-tab-button>
+      <ion-tab-button *ngIf="!userService.isLogged()" [routerLink]="['/login']">
+        <ion-icon name="person"></ion-icon>
+        Log in
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

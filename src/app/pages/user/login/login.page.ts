@@ -6,13 +6,14 @@ import { Router, RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { home, restaurant, people, person } from 'ionicons/icons'
+import { FooterComponent } from '../../../componentes/footer/footer.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink, ReactiveFormsModule]
+  imports: [CommonModule, IonicModule, RouterLink, ReactiveFormsModule, FooterComponent]
 })
 export class LoginPage implements OnInit {
   formLogin: FormGroup;

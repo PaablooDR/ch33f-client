@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { home, restaurant, people, person } from 'ionicons/icons'
+import { FooterComponent } from '../../../componentes/footer/footer.component';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.page.html',
   styleUrls: ['./detail.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule, RouterLink, FooterComponent],
 })
 export class DetailPage  implements OnInit {
 

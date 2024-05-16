@@ -4,13 +4,14 @@ import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { home, restaurant, people, person } from 'ionicons/icons'
+import { FooterComponent } from '../../../componentes/footer/footer.component';
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLink],
+  imports: [IonicModule, RouterLink, FooterComponent],
 })
 export class RecipesPage implements OnInit {
   recipes: any[] = []

@@ -7,13 +7,14 @@ import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { home, restaurant, people, person } from 'ionicons/icons'
+import { FooterComponent } from '../../../componentes/footer/footer.component';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule, RouterLink, FooterComponent],
 })
 export class ProfilePage implements OnInit {
 
