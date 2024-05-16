@@ -36,4 +36,7 @@ export class RecipeService {
   getNextSearchedRecipes(search: string, skip: number = 0): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/nextRecipeSearch/?skip=${skip}&search=${search}`);
   }
+  sumVisitToRecipe(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/visits/?id=${id}`);
+  }
 }

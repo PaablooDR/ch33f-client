@@ -25,6 +25,7 @@ export class DetailPage  implements OnInit {
   ngOnInit(): void {
     this.obtainId();
     this.getRecipe();
+    this.sumVisitToRecipe();
   }
   obtainId(): void {
     const indice = window.location.href.indexOf('recipe/');
@@ -37,6 +38,13 @@ export class DetailPage  implements OnInit {
       .subscribe(recipe => {
         this.recipe = recipe;
       });
+      console.log(this.recipe);
+  }
+  sumVisitToRecipe(): void {
+    this.recipeService.sumVisitToRecipe(this.id)
+    .subscribe(recipe => {
+      this.recipe = recipe;
+    });
   }
 
 }
