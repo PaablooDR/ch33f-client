@@ -5,19 +5,20 @@
 </ion-header>
 <ion-content [fullscreen]="false">
   <ion-title>{{recipe.title}}</ion-title>
-  <img id="recipeImg" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <img id="recipeImg" alt="Silhouette of mountains" [src]="'http://localhost:3333/images/' + recipe.main_photo" />
   <ion-list>
     <ion-list-header>
       <ion-label>Ingredients</ion-label>
     </ion-list-header>
     <ion-item *ngFor="let ingredient of recipe.ingredients">
-      <ion-label>{{ ingredient }}</ion-label>
+      <ion-label>- {{ ingredient }}</ion-label>
     </ion-item>
   </ion-list>
   <ion-title>Steps</ion-title>
   <div *ngFor="let step of recipe.instructions; let i = index">
     <p class="stepText">Step {{i+1}}: {{step.title}}</p>
-    <img class="stepImg" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
+    <p class="stepDescription">{{step.description}}</p>
+    <!--<img class="stepImg" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>-->
   </div>
 </ion-content>
 

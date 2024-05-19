@@ -5,16 +5,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="false">
+  <ion-title id="top5title">Top 5 recipes</ion-title>
   @for (recipe of recipes; track recipe._id) {
     <ion-card [routerLink]="['/recipe', recipe._id]">
-      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <img alt="Recipe" [src]="'http://localhost:3333/images/' + recipe.main_photo" />
       <ion-card-header>
-        <ion-card-title>{{recipe.title}}</ion-card-title>
+        <ion-card-title>{{ recipe.title }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        {{recipe.description}}
+        {{ recipe.description }}
       </ion-card-content>
-    </ion-card> 
+    </ion-card>
   }
 </ion-content>
 

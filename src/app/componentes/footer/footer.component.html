@@ -13,7 +13,7 @@
         <ion-icon name="people"></ion-icon>
         People
       </ion-tab-button>
-      <ion-tab-button *ngIf="userService.isLogged()" [routerLink]="['/profile']">
+      <ion-tab-button *ngIf="userService.isLogged()" [routerLink]="['/profile', id]">
         <ion-icon name="person"></ion-icon>
         Profile
       </ion-tab-button>

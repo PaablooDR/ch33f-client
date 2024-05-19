@@ -9,7 +9,7 @@
   @for (user of users; track user._id) {
     <ion-item [routerLink]="['/profile', user._id]">
       <ion-avatar aria-hidden="true" slot="start">
-        <img alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        <img alt="avatar" [src]="'http://localhost:3333/images/' + user.photo" />
       </ion-avatar>
       <ion-label>{{user.name}}</ion-label>
     </ion-item>

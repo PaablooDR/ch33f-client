@@ -21,6 +21,7 @@ export class ProfilePage implements OnInit {
   user: any = {};
   recipes: any[] = [];
   id: string = ""; 
+  showButton: boolean = false;
   
   constructor(private userService: UsersService, private recipeService: RecipeService) {
     addIcons({ home, restaurant, people, person })
@@ -41,6 +42,13 @@ export class ProfilePage implements OnInit {
       .subscribe(user => {
         this.user = user;
       });
+      const userdatastring = localStorage.getItem('userdata');
+      if (userdatastring) {
+        const userdata = JSON.parse(userdatastring);
+        if(userdata._id === this.id) {
+          this.showButton = true;
+        }
+      } 
     this.getUserRecipes();
   }
   getUserRecipes(): void {

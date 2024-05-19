@@ -15,6 +15,9 @@ export class UsersService {
   getUser(id: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/user/?id=${id}`);
   }
+  getUserId(email: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/userId/?email=${email}`);
+  }
   getFirstUsers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/first`);
   }
@@ -38,7 +41,7 @@ export class UsersService {
   loginUser(userData: { email: string; password: string }): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/login`, userData);
   }
-
+  
   createHeaders() {
     return {
       headers: new HttpHeaders ({

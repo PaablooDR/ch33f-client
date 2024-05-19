@@ -15,10 +15,20 @@ import { home, restaurant, people, person } from 'ionicons/icons'
 })
 export class FooterComponent  implements OnInit {
 
+  id: string = "";
+
   constructor(public userService: UsersService) {
     addIcons({ home, restaurant, people, person });
   }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.getTokenId();
+  }
+  getTokenId(): void {
+    const userdatastring = localStorage.getItem('userdata');
+    if (userdatastring) {
+      const userdata = JSON.parse(userdatastring);
+      this.id = userdata._id;
+    }
+  }
 }

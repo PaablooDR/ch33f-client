@@ -39,4 +39,7 @@ export class RecipeService {
   sumVisitToRecipe(id: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/visits/?id=${id}`);
   }
+  createRecipe(recipeData: FormData): Observable<any> {
+    return this.http.post<any>(this.baseUrl, recipeData);
+  }
 }

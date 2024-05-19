@@ -17,7 +17,7 @@ import { FooterComponent } from '../../../componentes/footer/footer.component';
 export class DetailPage  implements OnInit {
 
   recipe: any = {};
-  id: string = ""; // window.location.href;
+  id: string = "";
 
   constructor(private recipeService: RecipeService) {
     addIcons({ home, restaurant, people, person })
