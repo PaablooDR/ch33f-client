@@ -1,7 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-inspection">
     <ion-title>Recipe Inspection</ion-title>
+    <ion-buttons>
+      <ion-button (click)="changeSaved()">
+        <!-- <ion-icon [name]="saved ? 'heart' : 'heartOutline'" color="danger"></ion-icon> -->
+        <ion-icon name="heart" [color]="saved ? 'danger' : 'dark'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 <ion-content [fullscreen]="false">
   <ion-title>{{recipe.title}}</ion-title>
