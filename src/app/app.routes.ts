@@ -17,7 +17,8 @@ export const routes: Routes = [
   },
   {
     path: 'savedRecipes',
-    loadComponent: () => import('./pages/recipe/savedrecipes/savedrecipes.page').then( m => m.SavedRecipesPage)
+    loadComponent: () => import('./pages/recipe/savedrecipes/savedrecipes.page').then( m => m.SavedRecipesPage),
+    canActivate: [loginGuard]
   },
   {
     path: 'recipes',
@@ -29,11 +30,12 @@ export const routes: Routes = [
   },
   {
     path: 'addRecipe',
-    loadComponent: () => import('./pages/recipe/addrecipe/addrecipe.page').then(m => m.AddrecipePage)
+    loadComponent: () => import('./pages/recipe/addrecipe/addrecipe.page').then(m => m.AddrecipePage),
+    canActivate: [loginGuard]
   },
   {
     path: 'profile/:user',
-    loadComponent: () => import('./pages/user/profile/profile.page').then(m => m.ProfilePage)
+    loadComponent: () => import('./pages/user/profile/profile.page').then(m => m.ProfilePage),
   },
   {
     path: 'people',
