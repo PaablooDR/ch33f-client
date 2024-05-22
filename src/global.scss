@@ -82,3 +82,32 @@
 .medium-color {
     color: var(--ion-color-medium) !important;
 }
+
+.titles {
+    padding-left: 4%;
+}
+
+.login-register-container {
+    display: flex !important;
+    flex-direction: column;
+    // align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+.login-register-form {
+    padding: 2% !important;
+}
+
+.login-register-card {
+    display: block;
+}
+
+.login-register {
+    display: block;
+    text-align: center;
+}
+
+.button-form {
+    padding: 3% 25%;
+}

@@ -1,29 +1,29 @@
 <ion-header class="header">
   <ion-toolbar class="header-inspection" color="primary">
     <ion-title>Recipe Inspection</ion-title>
-    <ion-buttons>
-      <ion-button (click)="changeSaved()">
-        <ion-icon name="heart" [color]="saved ? 'danger' : 'light'"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-button *ngIf="usersService.isLogged()" (click)="changeSaved()">
+        <ion-icon name="heart" [color]="saved ? 'danger' : 'dark'"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  
 </ion-header>
+
 <ion-content [fullscreen]="false">
-  <h2>{{recipe.title}}</h2>
+  <h2 class="titles secondary-color">{{recipe.title}}</h2>
   <img id="recipeImg" alt="Silhouette of mountains" [src]="'http://localhost:3333/images/' + recipe.main_photo" />
   <ion-list>
-    <ion-list-header>
-      <ion-label>Ingredients</ion-label>
-    </ion-list-header>
+    <!-- <ion-list-header> -->
+      <h2 class="titles secondary-color">Ingredients</h2>
+    <!-- </ion-list-header> -->
     <ion-item *ngFor="let ingredient of recipe.ingredients">
-      <ion-label>- {{ ingredient }}</ion-label>
+      <ion-label color="secondary">- {{ ingredient }}</ion-label>
     </ion-item>
   </ion-list>
-  <h2>Steps</h2>
+  <h2 class="titles secondary-color">Steps</h2>
   <div *ngFor="let step of recipe.instructions; let i = index">
-    <p class="stepText">Step {{i+1}}: {{step.title}}</p>
-    <p class="stepDescription">{{step.description}}</p>
+    <p class="stepText secondary-color">Step {{i+1}}: {{step.title}}</p>
+    <p class="stepDescription secondary-color">{{step.description}}</p>
     <!--<img class="stepImg" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>-->
   </div>
 </ion-content>

@@ -37,20 +37,10 @@ export class LoginPage implements OnInit {
       const loginData = this.formLogin.value;
       this.userService.loginUser(loginData).subscribe(
         (response) => {
-          console.log('Usuario logeado exitosamente:', response);
           localStorage.setItem('token_ch33f', response.token);
           this.userService.getUserId(loginData.email)
             .subscribe(user => {
               localStorage.setItem('userdata', JSON.stringify(user));
-              // CODIGO PARA SACAR ID DE LA LOCAL STORAGE
-              // const prueba = localStorage.getItem('userdata');
-              // console.log(prueba);
-              // if (prueba) {
-              //   const prueba2 = JSON.parse(prueba);
-              //   console.log(prueba2._id);
-              // } else {
-              //   console.log('NO ENCONTRADO');
-              // }
             });
           this.router.navigate(['/home']);
         },

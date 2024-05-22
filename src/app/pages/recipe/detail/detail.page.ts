@@ -21,7 +21,7 @@ export class DetailPage  implements OnInit {
   id: string = "";
   saved = false;
 
-  constructor(private recipeService: RecipeService, private usersService: UsersService) {
+  constructor(private recipeService: RecipeService, public usersService: UsersService) {
     addIcons({ home, restaurant, people, person, heart, heartOutline });
   }
 

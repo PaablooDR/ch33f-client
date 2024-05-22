@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="false">
-  <ion-title id="top5title" class="secondary-color">Top 5 recipes</ion-title>
+  <h2 id="top5title" class="titles secondary-color">Top 5 recipes</h2>
   @for (recipe of recipes; track recipe._id) {
     <ion-card [routerLink]="['/recipe', recipe._id]">
       <img alt="Recipe" [src]="'http://localhost:3333/images/' + recipe.main_photo" />

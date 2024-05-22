@@ -5,38 +5,41 @@
 </ion-header>
 
 <ion-content [fullscreen]="false">
-  <ion-card>
-    <form [formGroup]="formRegister" (ngSubmit)="onSubmit($event)">
-      <ion-item>
-        <ion-input label="User name" labelPlacement="floating" placeholder="User name" formControlName="name"></ion-input>
-        <ion-note slot="error" *ngIf="checkError('name', 'required')">
-          User's name field is required
-        </ion-note>
-        <ion-note slot="error" *ngIf="checkError('name', 'maxLength')">
-          User's name field must be maximum 50 characters
-        </ion-note>
-        <ion-note slot="error" *ngIf="checkError('name', 'minLength')">
-          User's name field must be minimum 5 characters
-        </ion-note>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
-        <ion-note slot="error">Email is required</ion-note>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Description" labelPlacement="floating" placeholder="Description" formControlName="description"></ion-input>
-        <ion-note slot="error">Description's field must be minimum length 5 and maximum 100</ion-note>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
-        <ion-note slot="error">Password's field must be minimum length 5</ion-note>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Photo" labelPlacement="floating" type="file" (change)="onFileSelected($event)"></ion-input>
-      </ion-item>
-      <ion-button color="tertiary" type="submit" [disabled]="!formRegister.valid">Accept</ion-button>
-    </form>
-  </ion-card>
+  <div class="login-register-container">
+    <ion-card class="login-register-card">
+      <form [formGroup]="formRegister" (ngSubmit)="onSubmit($event)" class="login-register-form">
+        <ion-item>
+          <ion-input label="User name" labelPlacement="floating" placeholder="User name" formControlName="name"></ion-input>
+          <ion-note slot="error" *ngIf="checkError('name', 'required')">
+            User's name field is required
+          </ion-note>
+          <ion-note slot="error" *ngIf="checkError('name', 'maxLength')">
+            User's name field must be maximum 50 characters
+          </ion-note>
+          <ion-note slot="error" *ngIf="checkError('name', 'minLength')">
+            User's name field must be minimum 5 characters
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
+          <ion-note slot="error">Email is required</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Description" labelPlacement="floating" placeholder="Description" formControlName="description"></ion-input>
+          <ion-note slot="error">Description's field must be minimum length 5 and maximum 100</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
+          <ion-note slot="error">Password's field must be minimum length 5</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Photo" labelPlacement="floating" type="file" (change)="onFileSelected($event)"></ion-input>
+        </ion-item>
+        <ion-button color="tertiary" type="submit" [disabled]="!formRegister.valid" class="button-form" expand="block">Accept</ion-button>
+      </form>
+    </ion-card>
+    <a href="login" class="secondary-color login-register">Sign in</a>
+  </div>
 </ion-content>
 
 <app-footer></app-footer>

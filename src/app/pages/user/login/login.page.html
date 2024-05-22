@@ -4,20 +4,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="false" class="login">
-  <ion-card class="login-form">
-    <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)">
-      <ion-item>
-        <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
-        <ion-note slot="error">Email is required</ion-note>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
-        <ion-note slot="error">Password's field must be minimum length 5</ion-note>
-      </ion-item>
-      <ion-button color="tertiary" type="submit" [disabled]="!formLogin.valid">Accept</ion-button>
-    </form>
-  </ion-card>
+<ion-content [fullscreen]="false">
+  <div class="login-register-container">
+    <ion-card class="login-register-card">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit($event)" class="login-register-form">
+        <ion-item>
+          <ion-input label="Email" labelPlacement="floating" type="email" placeholder="Email" formControlName="email"></ion-input>
+          <ion-note slot="error">Email is required</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"></ion-input>
+          <ion-note slot="error">Password's field must be minimum length 5</ion-note>
+        </ion-item>
+        <ion-button color="tertiary" type="submit" [disabled]="!formLogin.valid" class="button-form" expand="block">Accept</ion-button>
+      </form>
+    </ion-card>
+    <a href="register" class="secondary-color login-register">Not registered?</a>
+  </div>
 </ion-content>
 
 <app-footer></app-footer>

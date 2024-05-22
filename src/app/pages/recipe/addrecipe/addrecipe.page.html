@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="false">
-  <form [formGroup]="formRecipe" (ngSubmit)="onSubmit($event)">
+  <form [formGroup]="formRecipe" (ngSubmit)="onSubmit($event)" class="login-register-form">
     <!--<ion-item>
       <ion-input label="User name" labelPlacement="floating" placeholder="User name" formControlName="name"></ion-input>
       <ion-note slot="error" *ngIf="checkError('name', 'required')">
@@ -55,7 +55,7 @@
         <ion-input formControlName="stepdescription{{i}}"></ion-input>
       </ion-item>
     </ng-container>
-    <ion-button type="submit" [disabled]="!formRecipe.valid">Accept</ion-button>
+    <ion-button color="tertiary" type="submit" [disabled]="!formRecipe.valid" class="button-form" expand="block">Accept</ion-button>
   </form>
 </ion-content>
 

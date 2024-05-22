@@ -11,7 +11,7 @@
       <ion-avatar aria-hidden="true" slot="start">
         <img alt="avatar" [src]="'http://localhost:3333/images/' + user.photo" />
       </ion-avatar>
-      <ion-label>{{user.name}}</ion-label>
+      <ion-label color="secondary">{{user.name}}</ion-label>
     </ion-item>
   }
   <ion-infinite-scroll (ionInfinite)="loadData($event)">
