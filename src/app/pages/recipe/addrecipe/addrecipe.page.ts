@@ -112,7 +112,7 @@ export class AddrecipePage implements OnInit {
         this.formRecipe.addControl(`ingredient${i}`, new FormControl('', [
           Validators.required,
           Validators.maxLength(50),
-          Validators.minLength(5)
+          Validators.minLength(1)
         ]));
       }
     }
@@ -127,13 +127,13 @@ export class AddrecipePage implements OnInit {
       if (!this.formRecipe.contains(`steptitle${i}`) || !this.formRecipe.contains(`stepdescription${i}`)) {
         this.formRecipe.addControl(`steptitle${i}`, new FormControl('', [
           Validators.required,
-          Validators.maxLength(50),
-          Validators.minLength(5)
+          Validators.maxLength(150),
+          Validators.minLength(1)
         ]));
         this.formRecipe.addControl(`stepdescription${i}`, new FormControl('', [
           Validators.required,
-          Validators.maxLength(50),
-          Validators.minLength(5)
+          Validators.maxLength(150),
+          Validators.minLength(1)
         ]));
       }
     }

@@ -1,17 +1,16 @@
-<ion-header>
+<ion-header class="header">
   <ion-toolbar class="header-inspection">
     <ion-title>Recipe Inspection</ion-title>
     <ion-buttons>
       <ion-button (click)="changeSaved()">
-        <!-- <ion-icon [name]="saved ? 'heart' : 'heartOutline'" color="danger"></ion-icon> -->
-        <ion-icon name="heart" [color]="saved ? 'danger' : 'dark'"></ion-icon>
+        <ion-icon name="heart" [color]="saved ? 'danger' : 'light'"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
   
 </ion-header>
 <ion-content [fullscreen]="false">
-  <ion-title>{{recipe.title}}</ion-title>
+  <h2>{{recipe.title}}</h2>
   <img id="recipeImg" alt="Silhouette of mountains" [src]="'http://localhost:3333/images/' + recipe.main_photo" />
   <ion-list>
     <ion-list-header>
@@ -21,7 +20,7 @@
       <ion-label>- {{ ingredient }}</ion-label>
     </ion-item>
   </ion-list>
-  <ion-title>Steps</ion-title>
+  <h2>Steps</h2>
   <div *ngFor="let step of recipe.instructions; let i = index">
     <p class="stepText">Step {{i+1}}: {{step.title}}</p>
     <p class="stepDescription">{{step.description}}</p>

@@ -1,2 +1,44 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// Import Ionic default styles
+@import '~@ionic/angular/css/core.css';
+
+// Define your own custom colors
+:root {
+    --ion-color-primary: #f8edeb;
+    --ion-color-primary-rgb: 248, 237, 235;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #e0dad9;
+    --ion-color-primary-tint: #f9eeec;
+  
+    --ion-color-secondary: #ffb5a7;
+    --ion-color-secondary-rgb: 255, 181, 167;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #e6a49b;
+    --ion-color-secondary-tint: #ffc7ba;
+  
+    --ion-color-tertiary: #fec89a;
+    --ion-color-tertiary-rgb: 254, 200, 154;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #e6b58a;
+    --ion-color-tertiary-tint: #fed1aa;
+  
+    --ion-color-light: #f8edeb;
+    --ion-color-light-rgb: 248, 237, 235;
+    --ion-color-light-contrast: #000000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #e0dad9;
+    --ion-color-light-tint: #f9eeec;
+  
+    --ion-color-medium: #f9dcc4;
+    --ion-color-medium-rgb: 249, 220, 196;
+    --ion-color-medium-contrast: #000000;
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #e0c3ae;
+    --ion-color-medium-tint: #fae3ce;
+
+    --ion-background-color: #faf7f7;
+}
+
+// You can also define additional custom variables for other elements

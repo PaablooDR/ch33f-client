@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="header">
   <ion-toolbar>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
@@ -10,19 +10,19 @@
       <ion-avatar aria-hidden="true" slot="start">
         <img alt="Avatar" [src]="'http://localhost:3333/images/' + user.photo" />
       </ion-avatar>
-      <ion-label>{{user.name}}</ion-label>
+      <ion-label class="secondary-color">{{user.name}}</ion-label>
     </ion-item>
     <ion-item class="profile">
-      <ion-label>{{user.description}}</ion-label>
+      <ion-label class="secondary-color">{{user.description}}</ion-label>
     </ion-item>
   </ion-list>
 
   <div class="custom-container">
     <ng-container *ngIf="showButton">
-      <ion-button class="custom-button" [routerLink]="['/addRecipe']">Add recipe</ion-button>
+      <ion-button color="tertiary" class="custom-button" [routerLink]="['/addRecipe']">Add recipe</ion-button>
     </ng-container>
     <ng-container *ngIf="showButton">
-      <ion-button class="custom-button" [routerLink]="['/savedRecipes']">Saved Recipes</ion-button>
+      <ion-button color="tertiary" class="custom-button" [routerLink]="['/savedRecipes']">Saved Recipes</ion-button>
     </ng-container>
   </div>
 
@@ -37,7 +37,7 @@
       <ion-card [routerLink]="['/recipe', recipe._id]">
         <img alt="Silhouette of mountains" [src]="'http://localhost:3333/images/' + recipe.main_photo" />
         <ion-card-header>
-          <ion-card-title>{{recipe.title}}</ion-card-title>
+          <ion-card-title class="secondary-color">{{recipe.title}}</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>

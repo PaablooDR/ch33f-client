@@ -56,7 +56,7 @@ export class UsersPage implements OnInit {
       this.getNumUsers();
       this.getFirstSearchedUsers();
     }
-    console.log('Se ha escrito en el ion-searchbar:', this.search);
+    // console.log('Se ha escrito en el ion-searchbar:', this.search);
   }
 
   getFirstUsers(): void {

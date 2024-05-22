@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="header">
   <ion-toolbar>
     <ion-title>Add Recipe</ion-title>
   </ion-toolbar>
@@ -32,7 +32,7 @@
     <ion-item>
       <ion-input type="number" label="Ingredients" labelPlacement="floating" placeholder="Ingredients" formControlName="ingredientNumber" min="1" 
       max="15"></ion-input>
-      <ion-button (click)="generateIngredients()">+</ion-button>
+      <ion-button color="tertiary" (click)="generateIngredients()">+</ion-button>
     </ion-item>
     <ng-container *ngFor="let ingredient of ingredients; let i = index">
       <ion-item>
@@ -44,7 +44,7 @@
 
       <ion-input type="number" label="Recipe steps" labelPlacement="floating" placeholder="Recipe steps" formControlName="stepNumber" min="1" 
       max="15"></ion-input>
-      <ion-button (click)="generateSteps()">+</ion-button>
+      <ion-button color="tertiary" (click)="generateSteps()">+</ion-button>
     </ion-item>
     <ng-container *ngFor="let step of steps; let i = index">
       <ion-item>

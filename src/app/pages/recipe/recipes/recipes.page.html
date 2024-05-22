@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="header">
   <ion-toolbar>
     <ion-title>Recipes</ion-title>
   </ion-toolbar>
@@ -10,9 +10,9 @@
     <ion-card [routerLink]="['/recipe', recipe._id]">
       <img alt="Recipe" [src]="'http://localhost:3333/images/' + recipe.main_photo" />
       <ion-card-header>
-        <ion-card-title>{{ recipe.title }}</ion-card-title>
+        <ion-card-title class="secondary-color">{{ recipe.title }}</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class="secondary-color">
         {{ recipe.description }}
       </ion-card-content>
     </ion-card>

@@ -1,28 +1,28 @@
 <ion-toolbar>
   <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button [routerLink]="['/home']">
-        <ion-icon name="home"></ion-icon>
+    <ion-tab-bar slot="bottom" class="primary-background">
+      <ion-tab-button [routerLink]="['/home']" class="primary-background secondary-color">
+        <ion-icon name="home" class="secondary-color"></ion-icon>
         Home
       </ion-tab-button>
-      <ion-tab-button [routerLink]="['/recipes']">
-        <ion-icon name="restaurant"></ion-icon>
+      <ion-tab-button [routerLink]="['/recipes']" class="primary-background secondary-color">
+        <ion-icon name="restaurant" class="secondary-color"></ion-icon>
         Recipes
       </ion-tab-button>
-      <ion-tab-button [routerLink]="['/people']">
-        <ion-icon name="people"></ion-icon>
+      <ion-tab-button [routerLink]="['/people']" class="primary-background secondary-color">
+        <ion-icon name="people" class="secondary-color"></ion-icon>
         People
       </ion-tab-button>
-      <ion-tab-button *ngIf="userService.isLogged()" [routerLink]="['/profile', id]">
-        <ion-icon name="person"></ion-icon>
+      <ion-tab-button *ngIf="userService.isLogged()" [routerLink]="['/profile', id]" class="primary-background secondary-color">
+        <ion-icon name="person" class="secondary-color"></ion-icon>
         Profile
       </ion-tab-button>
-      <ion-tab-button *ngIf="!userService.isLogged()" [routerLink]="['/login']">
-        <ion-icon name="person"></ion-icon>
+      <ion-tab-button *ngIf="!userService.isLogged()" [routerLink]="['/login']" class="primary-background secondary-color">
+        <ion-icon name="person" class="secondary-color"></ion-icon>
         Log in
       </ion-tab-button>
-      <ion-tab-button *ngIf="userService.isLogged()" (click)="logOut()" [routerLink]="['/home']">
-        <ion-icon name="exit"></ion-icon>
+      <ion-tab-button *ngIf="userService.isLogged()" (click)="logOut()" [routerLink]="['/home']" class="primary-background secondary-color">
+        <ion-icon name="exit" class="secondary-color"></ion-icon>
         Log out
       </ion-tab-button>
     </ion-tab-bar>

@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="header">
   <ion-toolbar>
     <ion-title>Register</ion-title>
   </ion-toolbar>
@@ -34,7 +34,7 @@
       <ion-item>
         <ion-input label="Photo" labelPlacement="floating" type="file" (change)="onFileSelected($event)"></ion-input>
       </ion-item>
-      <ion-button type="submit" [disabled]="!formRegister.valid">Accept</ion-button>
+      <ion-button color="tertiary" type="submit" [disabled]="!formRegister.valid">Accept</ion-button>
     </form>
   </ion-card>
 </ion-content>
