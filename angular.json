@@ -77,7 +77,9 @@
               "buildTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
+              "buildTarget": "app:build:development",
+              "host": "0.0.0.0",
+              "allowedHosts": ["localhost", "ch33f.net", "admin.ch33f.net"]
             },
             "ci": {
               "progress": false

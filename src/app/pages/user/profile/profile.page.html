@@ -21,6 +21,9 @@
     <ng-container *ngIf="showButton">
       <ion-button class="custom-button" [routerLink]="['/addRecipe']">Add recipe</ion-button>
     </ng-container>
+    <ng-container *ngIf="showButton">
+      <ion-button class="custom-button" [routerLink]="['/savedRecipes']">Saved Recipes</ion-button>
+    </ng-container>
   </div>
 
   <!--<ion-card *ngFor="let recipe of recipes; let i = index">

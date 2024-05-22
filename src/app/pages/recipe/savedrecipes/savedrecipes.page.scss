@@ -1,0 +1,19 @@
+ion-card {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center; 
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto; 
+        margin-top: 10px;
+        width: 90%; 
+        height: auto; 
+    }
+}

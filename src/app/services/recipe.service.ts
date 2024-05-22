@@ -42,4 +42,7 @@ export class RecipeService {
   createRecipe(recipeData: FormData): Observable<any> {
     return this.http.post<any>(this.baseUrl, recipeData);
   }
+  getSavedRecipes(id: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/saved/?id=${id}`);
+  }
 }

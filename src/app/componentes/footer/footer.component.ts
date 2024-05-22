@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { home, restaurant, people, person } from 'ionicons/icons'
+import { home, restaurant, people, person, exit } from 'ionicons/icons'
 
 @Component({
   selector: 'app-footer',
@@ -18,7 +18,7 @@ export class FooterComponent  implements OnInit {
   id: string = "";
 
   constructor(public userService: UsersService) {
-    addIcons({ home, restaurant, people, person });
+    addIcons({ home, restaurant, people, person, exit });
   }
 
   ngOnInit() {
@@ -30,5 +30,8 @@ export class FooterComponent  implements OnInit {
       const userdata = JSON.parse(userdatastring);
       this.id = userdata._id;
     }
+  }
+  logOut(): void {
+    localStorage.clear();
   }
 }

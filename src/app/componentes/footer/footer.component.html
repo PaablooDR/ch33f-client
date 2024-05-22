@@ -21,6 +21,10 @@
         <ion-icon name="person"></ion-icon>
         Log in
       </ion-tab-button>
+      <ion-tab-button *ngIf="userService.isLogged()" (click)="logOut()" [routerLink]="['/home']">
+        <ion-icon name="exit"></ion-icon>
+        Log out
+      </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
 </ion-toolbar>
